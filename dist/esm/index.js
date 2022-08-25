@@ -1,9 +1,12 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import DateTime from "./date-time";
-import Colon from "./colon";
-import { getType, useCountdown } from "./helper";
-import "./styles.css";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+// components
+import DateTime from './date-time';
+import Colon from './colon';
+// helper
+import { getType, useCountdown } from './helper';
+// styles
+import './styles.css';
 var Countdown = function (_a) {
     var disableTypes = _a.disableTypes, formatType = _a.formatType, targetDate = _a.targetDate, renderer = _a.renderer;
     var dateData = useCountdown(targetDate);
@@ -21,13 +24,7 @@ var Countdown = function (_a) {
 };
 Countdown.propTypes = {
     disableTypes: PropTypes.bool,
-    formatType: PropTypes.oneOf([
-        "d_h_m_s",
-        "D_H_M_S",
-        "dd_hh_mm_ss",
-        "DD_HH_MM_SS",
-        undefined,
-    ]),
+    formatType: PropTypes.oneOf(['d_h_m_s', 'D_H_M_S', 'dd_hh_mm_ss', 'DD_HH_MM_SS', undefined]),
     renderer: PropTypes.func,
     targetDate: PropTypes.string.isRequired,
 };

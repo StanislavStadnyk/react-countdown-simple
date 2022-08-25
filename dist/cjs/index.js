@@ -28,9 +28,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var prop_types_1 = __importDefault(require("prop-types"));
+// components
 var date_time_1 = __importDefault(require("./date-time"));
 var colon_1 = __importDefault(require("./colon"));
+// helper
 var helper_1 = require("./helper");
+// styles
 require("./styles.css");
 var Countdown = function (_a) {
     var disableTypes = _a.disableTypes, formatType = _a.formatType, targetDate = _a.targetDate, renderer = _a.renderer;
@@ -49,13 +52,7 @@ var Countdown = function (_a) {
 };
 Countdown.propTypes = {
     disableTypes: prop_types_1.default.bool,
-    formatType: prop_types_1.default.oneOf([
-        "d_h_m_s",
-        "D_H_M_S",
-        "dd_hh_mm_ss",
-        "DD_HH_MM_SS",
-        undefined,
-    ]),
+    formatType: prop_types_1.default.oneOf(['d_h_m_s', 'D_H_M_S', 'dd_hh_mm_ss', 'DD_HH_MM_SS', undefined]),
     renderer: prop_types_1.default.func,
     targetDate: prop_types_1.default.string.isRequired,
 };

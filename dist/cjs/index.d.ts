@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { TFormatType, TRenderProps } from "./types";
-import "./styles.css";
+import { FC } from 'react';
+import { TFormatType, TRenderProps } from './types';
+import './styles.css';
 interface ICountdown {
     disableTypes?: boolean;
     formatType?: TFormatType;
