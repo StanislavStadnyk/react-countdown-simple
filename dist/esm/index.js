@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import DateTime from "./date-time";
+import Colon from "./colon";
 import { getType, useCountdown } from "./helper";
 import "./styles.css";
 var Countdown = function (_a) {
@@ -13,12 +14,9 @@ var Countdown = function (_a) {
         minutes: dateData[2],
         seconds: dateData[3],
     };
-    var renderColon = function (index) {
-        return index !== dateData.length - 1 && (React.createElement("strong", { className: "react-countdown-simple__colon" }, ":"));
-    };
     var renderDates = dateData.map(function (value, index) { return (React.createElement(Fragment, { key: index },
         React.createElement(DateTime, { value: value, type: types[index], disableTypes: disableTypes }),
-        renderColon(index))); });
+        React.createElement(Colon, { data: dateData, index: index }))); });
     return (React.createElement("div", { className: "react-countdown-simple" }, renderer ? renderer(rendererProps) : renderDates));
 };
 Countdown.propTypes = {

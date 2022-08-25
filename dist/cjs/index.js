@@ -29,6 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var prop_types_1 = __importDefault(require("prop-types"));
 var date_time_1 = __importDefault(require("./date-time"));
+var colon_1 = __importDefault(require("./colon"));
 var helper_1 = require("./helper");
 require("./styles.css");
 var Countdown = function (_a) {
@@ -41,12 +42,9 @@ var Countdown = function (_a) {
         minutes: dateData[2],
         seconds: dateData[3],
     };
-    var renderColon = function (index) {
-        return index !== dateData.length - 1 && (react_1.default.createElement("strong", { className: "react-countdown-simple__colon" }, ":"));
-    };
     var renderDates = dateData.map(function (value, index) { return (react_1.default.createElement(react_1.Fragment, { key: index },
         react_1.default.createElement(date_time_1.default, { value: value, type: types[index], disableTypes: disableTypes }),
-        renderColon(index))); });
+        react_1.default.createElement(colon_1.default, { data: dateData, index: index }))); });
     return (react_1.default.createElement("div", { className: "react-countdown-simple" }, renderer ? renderer(rendererProps) : renderDates));
 };
 Countdown.propTypes = {

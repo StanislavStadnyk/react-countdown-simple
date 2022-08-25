@@ -1,16 +1,11 @@
-import { FC, ReactElement } from "react";
-import { TFormatType } from "./types";
+import { FC } from "react";
+import { TFormatType, TRenderProps } from "./types";
 import "./styles.css";
-interface ICountdownTimer {
+interface ICountdown {
     disableTypes?: boolean;
     formatType?: TFormatType;
     targetDate: string;
-    renderer?: (renderProps: {
-        days: number;
-        hours: number;
-        minutes: number;
-        seconds: number;
-    }) => ReactElement;
+    renderer?: TRenderProps;
 }
-declare const Countdown: FC<ICountdownTimer>;
+declare const Countdown: FC<ICountdown>;
 export default Countdown;

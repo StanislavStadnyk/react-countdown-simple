@@ -1,4 +1,11 @@
+import { ReactElement } from "react";
 export declare type TFormatType = "d_h_m_s" | "D_H_M_S" | "dd_hh_mm_ss" | "DD_HH_MM_SS" | undefined;
+export declare type TRenderProps = (renderProps: {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}) => ReactElement;
 export declare enum EDateTime {
     D_H_M_S = "D_H_M_S",
     d_h_m_s = "d_h_m_s",

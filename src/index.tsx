@@ -2,19 +2,20 @@ import React, { FC, Fragment } from "react";
 import PropTypes from "prop-types";
 
 import DateTime from "./date-time";
+import Colon from "./colon";
 import { getType, useCountdown } from "./helper";
-import {TFormatType, TRenderProps} from "./types";
+import { TFormatType, TRenderProps } from "./types";
 
 import "./styles.css";
 
-interface ICountdownTimer {
+interface ICountdown {
   disableTypes?: boolean;
   formatType?: TFormatType;
   targetDate: string;
   renderer?: TRenderProps;
 }
 
-const Countdown: FC<ICountdownTimer> = ({
+const Countdown: FC<ICountdown> = ({
   disableTypes,
   formatType,
   targetDate,
@@ -30,15 +31,12 @@ const Countdown: FC<ICountdownTimer> = ({
     seconds: dateData[3],
   };
 
-  const renderColon = (index: number) =>
-    index !== dateData.length - 1 && (
-      <strong className="react-countdown-simple__colon">:</strong>
-    );
+
 
   const renderDates = dateData.map((value, index) => (
     <Fragment key={index}>
       <DateTime value={value} type={types[index]} disableTypes={disableTypes} />
-      {renderColon(index)}
+      <Colon data={dateData} index={index} />
     </Fragment>
   ));
 
