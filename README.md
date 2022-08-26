@@ -65,5 +65,5 @@ ReactDOM.render(
 |:--|:--:|:-----:|:----------|
 |**targetDate**|<code>string</code>|required|Timestamp in the future|
 |**disableTypes**|<code>boolean</code>|false|Hide formats|
-|**formatType**|<code>"d_h_m_s"&#124;"D_H_M_S"&#124;<br />"dd_hh_mm_ss"&#124;"DD_HH_MM_SS"&#124;<br />undefined</code>|"D_H_M_S"|Predefined formats|
+|**formatType**|<code>"d_h_m_s"&#124;"D_H_M_S"&#124; \\ "dd_hh_mm_ss"&#124;"DD_HH_MM_SS"&#124; \\ undefined</code>|"D_H_M_S"|Predefined formats|
 |**renderer**|`function`|`undefined`|Custom renderer callback|
