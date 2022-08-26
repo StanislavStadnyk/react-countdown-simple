@@ -1,5 +1,5 @@
 # React &lt;Countdown /&gt;
-A customizable countdown component for React.
+A simple customizable countdown component for React.
 
 ## Getting Started
 
