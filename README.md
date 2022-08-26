@@ -49,7 +49,7 @@ const oneHour = new Date(
   new Date().setHours(new Date().getHours() + 1)
 ).toISOString()
 
-const renderer = ({ hours, minutes, seconds, completed }) =>
+const renderer = ({ days, hours, minutes, seconds }) =>
   <div>{days}/{hours}/{minutes}/{seconds}</div>
 
 ReactDOM.render(
