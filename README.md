@@ -6,7 +6,9 @@ A customizable countdown component for React.
 You can install the module via `npm` or `yarn`:
 
 ```sh
-npm install react-countdown-simple --save
+npm install react-countdown --save
+```
 
 ```sh
-yarn add react-countdown-simple
+yarn add react-countdown
+```
