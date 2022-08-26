@@ -1,5 +1,4 @@
 import React, { FC, Fragment } from 'react';
-import PropTypes from 'prop-types';
 
 // components
 import DateTime from './date-time';
@@ -21,7 +20,12 @@ interface ICountdown {
   renderer?: TRenderProps;
 }
 
-const Countdown: FC<ICountdown> = ({ disableTypes, formatType, targetDate, renderer }) => {
+const Countdown: FC<ICountdown> = ({
+  disableTypes,
+  formatType,
+  targetDate,
+  renderer,
+}) => {
   const dateData = useCountdown(targetDate);
   const types = getType(formatType);
 
@@ -40,15 +44,10 @@ const Countdown: FC<ICountdown> = ({ disableTypes, formatType, targetDate, rende
   ));
 
   return (
-    <div className="react-countdown-simple">{renderer ? renderer(rendererProps) : renderDates}</div>
+    <div className="react-countdown-simple">
+      {renderer ? renderer(rendererProps) : renderDates}
+    </div>
   );
-};
-
-Countdown.propTypes = {
-  disableTypes: PropTypes.bool,
-  formatType: PropTypes.oneOf(['d_h_m_s', 'D_H_M_S', 'dd_hh_mm_ss', 'DD_HH_MM_SS', undefined]),
-  renderer: PropTypes.func,
-  targetDate: PropTypes.string.isRequired,
 };
 
 export default Countdown;

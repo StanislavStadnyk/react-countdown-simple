@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import PropTypes from "prop-types";
+import React, { FC } from 'react';
 
 interface IDateTime {
   disableTypes?: boolean;
@@ -8,7 +7,7 @@ interface IDateTime {
 }
 
 const DateTime: FC<IDateTime> = ({ value, type, disableTypes }) => {
-  const transformedValue = value.toString().padStart(2, "0");
+  const transformedValue = value.toString().padStart(2, '0');
   const dataTestsId = `date-time-${type.toLowerCase()}`;
 
   return (
@@ -20,12 +19,6 @@ const DateTime: FC<IDateTime> = ({ value, type, disableTypes }) => {
       {!disableTypes && type}
     </strong>
   );
-};
-
-DateTime.propTypes = {
-  disableTypes: PropTypes.bool,
-  value: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 export default DateTime;
