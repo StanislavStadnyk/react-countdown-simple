@@ -1,6 +1,6 @@
 {
   "name": "react-countdown-simple",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple countdown component for React.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -11,6 +11,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/StanislavStadnyk/react-countdown-simple.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StanislavStadnyk/react-countdown-simple/issues"
   },
   "keywords": [
     "react",
