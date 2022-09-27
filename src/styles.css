@@ -12,7 +12,7 @@
 .react-countdown-simple__date-time {
   display: inline-flex;
   font-size: 16px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .react-countdown-simple__date-time span {
