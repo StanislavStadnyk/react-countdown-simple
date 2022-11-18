@@ -17,7 +17,7 @@ A simple customizable countdown component for React.
     </tr>
 </table>
 
-Check here - https://bundlephobia.com/package/react-countdown-simple@1.0.11
+Check here - https://bundlephobia.com/package/react-countdown-simple@1.0.12
 
 * [Getting Started](#getting-started)
 * [Examples](#examples)
