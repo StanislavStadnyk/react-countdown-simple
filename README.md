@@ -1,6 +1,24 @@
 # React &lt;Countdown /&gt;
 A simple customizable countdown component for React.
 
+### Small bundle size
+
+<table>
+    <tr>
+        <th colspan="2">BUNDLE SIZE</th>
+    </tr>
+    <tr>
+        <td align='center'><b>305</b> B</td>
+        <td align='center'><b>171</b> B</td>
+    </tr>
+    <tr>
+        <td><em>MINIFIED</em></td>
+        <td><em>MINIFIED + GZIPPED</em></td>
+    </tr>
+</table>
+
+Check here - https://bundlephobia.com/package/react-countdown-simple@1.0.9
+
 * [Getting Started](#getting-started)
 * [Examples](#examples)
 * [Props](#props)
