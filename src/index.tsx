@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC, Fragment, useMemo } from 'react';
 
 // components
 import DateTime from './date-time';
@@ -27,13 +27,15 @@ const Countdown: FC<ICountdown> = ({
   renderer,
 }) => {
   const dateData = useCountdown(targetDate);
-  const types = getType(formatType);
+  const [days, hours, minutes, seconds] = dateData;
+
+  const types = useMemo(() => getType(formatType), [formatType]);
 
   const rendererProps = {
-    days: dateData[0],
-    hours: dateData[1],
-    minutes: dateData[2],
-    seconds: dateData[3],
+    days,
+    hours,
+    minutes,
+    seconds,
   };
 
   const renderDates = dateData.map((value, index) => (

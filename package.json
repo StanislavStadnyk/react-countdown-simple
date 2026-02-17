@@ -1,10 +1,17 @@
 {
   "name": "react-countdown-simple",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "Simple countdown component for React.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
+    }
+  },
   "files": [
     "/dist"
   ],
@@ -30,6 +37,9 @@
     "build:css": "babel src/styles.css -d dist/esm --copy-files && babel src/styles.css -d dist/cjs --copy-files",
     "test": "jest"
   },
+  "sideEffects": [
+    "./dist/**/*.css"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.18.9",
     "@babel/core": "^7.18.9",

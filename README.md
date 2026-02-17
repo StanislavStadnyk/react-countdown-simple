@@ -17,7 +17,7 @@ A simple customizable countdown component for React.
     </tr>
 </table>
 
-Check here - https://bundlephobia.com/package/react-countdown-simple@1.0.12
+Check here - https://bundlephobia.com/package/react-countdown-simple@1.0.14
 
 * [Getting Started](#getting-started)
 * [Examples](#examples)
@@ -43,16 +43,15 @@ Here are some examples which you can try directly online.
 A very simple and minimal example of how to set up a countdown that counts down from 1 hour.
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Countdown from 'react-countdown-simple';
 
 const oneHour = new Date(
   new Date().setHours(new Date().getHours() + 1)
 ).toISOString()
 
-ReactDOM.render(
-  <Countdown targetDate={oneHour} />,
-  document.getElementById('root')
+createRoot(document.getElementById('root')).render(
+  <Countdown targetDate={oneHour} />
 );
 ```
 [Live Demo](https://codesandbox.io/s/react-countdown-simple-example-bh2m0x)
@@ -60,7 +59,7 @@ ReactDOM.render(
 ### Custom renderer
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Countdown from 'react-countdown-simple';
 
 const oneHour = new Date(
@@ -70,9 +69,8 @@ const oneHour = new Date(
 const renderer = ({ days, hours, minutes, seconds }) =>
   <div>{days}/{hours}/{minutes}/{seconds}</div>
 
-ReactDOM.render(
-  <Countdown targetDate={oneHour} renderer={renderer}/>,
-  document.getElementById('root')
+createRoot(document.getElementById('root')).render(
+  <Countdown targetDate={oneHour} renderer={renderer} />
 );
 ```
 [Live Demo](https://codesandbox.io/s/react-countdown-simple-example-bh2m0x)
@@ -81,7 +79,9 @@ ReactDOM.render(
 
 |Name|Type|Default|Description|
 |:--|:--:|:-----:|:----------|
-|**targetDate**|`string`|`required`|Timestamp in the future|
-|**disableTypes**|`boolean`|`false`|Hide formats|
-|**formatType**|<code>"d_h_m_s" &#124; "D_H_M_S" &#124; "dd_hh_mm_ss" &#124; "DD_HH_MM_SS" &#124; undefined</code>|`"D_H_M_S"`|Predefined formats|
-|**renderer**|`function`|`undefined`|Custom renderer callback|
+|**targetDate**|`string \| number \| Date`|`required`|Target time in the future as ISO string, timestamp, or `Date` instance|
+|**disableTypes**|`boolean`|`false`|Hide the trailing unit labels (D, H, M, S)|
+|**formatType**|<code>"d_h_m_s" &#124; "D_H_M_S" &#124; "dd_hh_mm_ss" &#124; "DD_HH_MM_SS" &#124; undefined</code>|`"D_H_M_S"`|Predefined formats for labels and zero-padding|
+|**renderer**|`function`|`undefined`|Custom renderer callback receiving `{ days, hours, minutes, seconds }`|
+
+If `targetDate` cannot be parsed as a valid date, it is treated as "now" and the countdown renders `00 00 00 00`.
